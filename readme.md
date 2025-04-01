@@ -36,9 +36,9 @@ When the victim enters their credentials, the identity provider will forward the
 
 If the identity provider checks the existence of the username against the attacker's directory, the attacker can deploy a catch-all proxy to always fullfill the request.
 
-![Passthrough Form](images/passthrough-form.png)
+![Passthrough Form](images/passthrough-form.svg)
 
-![Passthrough Diagram](images/passthrough.png)
+![Passthrough Diagram](images/passthrough.svg)
 
 Passthrough phishing can be deployed to target a large number of users.
 
@@ -62,13 +62,13 @@ To prevent known-login ohishing, some identity providers require tenant / organi
 
 However, it is still possible to perform a prefill attack, which allows an attacker to prefill the username field with a username that's already in the attacker's directory.
 
-![Domain ownership diagram](images/domain-ownership.png)
+![Domain ownership diagram](images/domain-ownership.svg)
 
 Some providers allow the attacker to prefill the username field. The attacker can prefill the username field with a username that's already in the attacker's directory.
 
 The attacker can either typosquat the victim's domain or use built-in domains provided by the identity provider.
 
-![Prefill attack form](images/prefill-form.png)
+![Prefill attack form](images/prefill-form.svg)
 
 The victim will then enter their password, and the identity provider will forward the cleartext password to the on-premise agent.
 
@@ -78,7 +78,7 @@ Identity Providers have multiple choices to properly do federated authentication
 1. Enforce email authentication and domain ownership verification. Disable username prefill.
 2. Synchronize password hashes *from* the on-premise directory *to* the cloud directory. This ensures no password will ever be sent in cleartext to the on-premise agent / third-party system. [Google has implemented this solution for AD authentication](https://cloud.google.com/architecture/identity/federating-gcp-with-active-directory-synchronizing-user-accounts).
 
-![Password hash sync diagram](images/password-hash-synchronization.png)
+![Password hash sync diagram](images/password-hash-synchronization.svg)
 
 3. *Redirect* the user to the third-party authentication system, like ADFS / SAML. At least, the identity provider will not be responsible for forwarding credentials, and the scenario becomes a generic phishing scenario.
 
