@@ -120,6 +120,8 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 
 `attacker-tenant.onmicrosoft.com` can be abused to typosquat another's tenant root domain.
 
+> The `login_hint` parameter can also be set on Microsoft apps such as a victim's legitimate sharepoint and others apps. The parameter will be transferred to the login page as-is. The prompt will be displayed even if the victim is already logged-in into its own tenant.
+
 Say `MyCompany` uses `mycompany.net` as its primary UPN domain and `mycompany-org.onmicrosoft.com` as its Entra ID domain. The victim's legitimate primary UPN is `victim@mycompany.net`.
 
 The attacker could then register a new Entra domain `mycompany.onmicrosoft.com` and prefill `victim@mycompany.onmicrosoft.com`.
