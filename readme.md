@@ -116,11 +116,19 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &login_hint=victim@attacker-tenant.onmicrosoft.com
 ```
 
+**Generic example**
+
 [You can try the prefill trick directly here on the "common" tenant](https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=00001111-aaaa-2222-bbbb-3333cccc4444&response_type=code%20id_token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=form_post&scope=null&username=victim@attacker-tenant.onmicrosoft.com&login_hint=victim@attacker-tenant.onmicrosoft.com).
 
 `attacker-tenant.onmicrosoft.com` can be abused to typosquat another's tenant root domain.
 
 > The `login_hint` parameter can also be set on Microsoft apps such as a victim's legitimate sharepoint and others apps. The parameter will be transferred to the login page as-is. The prompt will be displayed even if the victim is already logged-in into its own tenant.
+
+Outlook redirection example : http://outlook.live.com/?login_hint=victim@attacker-tenant.onmicrosoft.com
+
+Sharepoint redirection example : https://microsoft.sharepoint.com/?login_hint=victim@attacker-tenant.onmicrosoft.com
+
+**Tenant typosquatting**
 
 Say `MyCompany` uses `mycompany.net` as its primary UPN domain and `mycompany-org.onmicrosoft.com` as its Entra ID domain. The victim's legitimate primary UPN is `victim@mycompany.net`.
 
