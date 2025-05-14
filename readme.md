@@ -116,6 +116,10 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &login_hint=victim@attacker-tenant.onmicrosoft.com
 ```
 
+Previously, Entra ID was vulnerable to UPN spoofing, allowing attackers to spoof arbitrary logins, as shown in the demo video below : 
+
+<video src="demos/entra.mp4" controls="1"></video>
+
 **Generic example**
 
 [You can try the prefill trick directly here on the "common" tenant](https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=00001111-aaaa-2222-bbbb-3333cccc4444&response_type=code%20id_token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=form_post&scope=null&username=victim@attacker-tenant.onmicrosoft.com&login_hint=victim@attacker-tenant.onmicrosoft.com).
@@ -142,7 +146,7 @@ Full domain typosquatting is also possible but requires the attacker to prove do
 
 However, it is possible to use the Okta LDAP agent and a catch-all user proxy to enhance PushSecurity's attack and remove the known-login requirement, making it a full Passthrough phishing.
 
-[Demo video for Okta](demos/okta.mp4)
+<video src="demos/okta.mp4" controls="1"></video>
 
 ### Auth0
 
