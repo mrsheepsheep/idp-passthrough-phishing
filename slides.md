@@ -44,7 +44,9 @@ Only for educational purposes and authorized / simulated environments.
 
 # Azure
 
-Everything starts here
+Once upon a time... in 2019
+
+![bg left](images/story.png)
 
 ## Azure Pass-Through-Authentication
 
