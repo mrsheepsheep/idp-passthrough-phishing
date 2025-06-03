@@ -222,7 +222,7 @@ Prevents known-login phishing
 ## Okta
 
 [org].okta.com
-tral-[random].okta.com
+trial-[random].okta.com
 
 ---
 
